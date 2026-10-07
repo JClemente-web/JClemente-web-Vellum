@@ -1,0 +1,14 @@
+---
+description: Domain invariants for evidence, findings, reports, and time
+globs: packages/domain/**,packages/evidence/**,packages/contracts/**
+alwaysApply: false
+---
+
+# Domain
+
+- Do not create a monolithic types.ts. Keep identifiers and aggregates in focused modules.
+- Executed is not resolved. Draft report is not an approved report. Derived evidence does not replace the original.
+- Critical findings require traceable evidence ids.
+- Persist instants in UTC. Keep event, device, GNSS, and ingest times distinct. Replay is deterministic.
+- Mission reconstruction must tolerate late, duplicate, and out-of-order events without rewriting history.
+- Regulatory category is stored as a versioned record. Do not hardcode RBAC-E 94 as the current rule, and do not hardcode SORA as a legal requirement.

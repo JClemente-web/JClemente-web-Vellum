@@ -1,0 +1,13 @@
+---
+description: Branch, commit, and release hygiene for VELLUM
+alwaysApply: true
+---
+
+# Git delivery
+
+- main is the protected integration branch. No force-push.
+- Use phase, feature, fix, or architecture branches.
+- Commits are small and cohesive. Do not commit secrets or real .env files.
+- One package manager: npm and package-lock.json only.
+- Do not open implementation issues or start Phase 0 from documentation work.
+- Pull requests state problem, scope, tests, security, migration impact, and rollback.

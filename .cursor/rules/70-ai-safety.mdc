@@ -1,0 +1,13 @@
+---
+description: Copilot tool classes and the flight-control boundary
+alwaysApply: true
+---
+
+# AI safety
+
+- The AI plane has no flight-control authority: no arm, takeoff, land, return-to-launch, setpoint, or geofence write.
+- Tools are READ_ONLY, DRAFT, HUMAN_CONFIRMATION_REQUIRED, or PROHIBITED_TO_AI.
+- Do not give the model raw SQL, unrestricted storage, or a universal database tool.
+- Delete, approve, permission changes, and safety actions are prohibited or require a recorded human confirmation.
+- Persist model, model version, prompt version, tool calls, evidence ids, and reviewer result for operational conclusions.
+- A model change needs an evaluation record.

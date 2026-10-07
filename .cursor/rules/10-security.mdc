@@ -1,0 +1,18 @@
+﻿---
+description: Security invariants for secrets, tenancy, and elevated database roles
+alwaysApply: true
+---
+
+# Security
+
+- Never put service_role, secret keys, AI keys, or storage secrets in frontend code or PUBLIC env vars.
+- Browser Data API access is deny-by-default. An exception needs its own ADR and cross-tenant tests.
+- service_role is server-only, for jobs, provisioning, or a named privileged task with audit. It is not the normal request path.
+- Authorize in the BFF use case. RLS is defense in depth, not a substitute.
+- Normal BFF database traffic uses `vellum_app` (`NOBYPASSRLS`). Do not connect that traffic as `postgres`, `service_role`, or a superuser.
+- A tenant id from the body, header, query, or route is not authority. Membership authorization is.
+- RLS settings are transaction-local. Missing `app.user_id` or `app.tenant_id` denies rows.
+- Do not put `CREATE ROLE` or a database password in a versioned business migration.
+- Tenant A must not reach Tenant B through query, API, Realtime, storage, signed URL, search, export, cache, offline sync, or Copilot.
+- Do not use editable user_metadata as authorization.
+- Original evidence is logically immutable: no content overwrite. Do not claim WORM unless Object Lock is actually configured and tested.

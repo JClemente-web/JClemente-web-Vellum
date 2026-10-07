@@ -1,0 +1,16 @@
+﻿---
+description: Supabase grants, RLS, and server-only secrets
+globs: supabase/**,apps/api/**
+alwaysApply: false
+---
+
+# Supabase
+
+- Grants and RLS are separate controls. GRANT to `authenticated` is not row authorization. That name is a Supabase Data API role, not the BFF login `vellum_app`.
+- Do not create a custom `vellum_anon`. Do not put `CREATE ROLE` or a password in a versioned business migration.
+- Enable and force RLS. Write tenant predicates with USING and WITH CHECK on updates. Missing transaction context denies the row.
+- New projects must not auto-expose tables. Grant only the operations a role needs, in the same migration as the policy.
+- Do not use SECURITY DEFINER to paper over a permission error.
+- Prefer the publishable key in the browser and the secret key only on the server.
+- Productive projects prefer region sa-east-1 when still offered. Re-check residency, backup, and PITR in current docs before creating one.
+- Private evidence must not be designed around the global storage CDN.

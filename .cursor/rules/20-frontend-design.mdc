@@ -1,0 +1,14 @@
+---
+description: VELLUM cockpit visual language and UX states
+globs: apps/web/**,apps/field/**,packages/ui/**
+alwaysApply: false
+---
+
+# Frontend design
+
+- Cockpit is desktop-first and dense: deep black, graphite, warm ivory, off-white, beige.
+- No gratuitous glassmorphism, decorative gradients, giant empty cards, or generic AI-SaaS styling.
+- Static metadata uses zero-pill discipline. Operational numbers use tabular numerals.
+- Use semantic tokens (brand, surface, text, border, status, map, chart) rather than raw colors in components.
+- Every data surface defines loading, empty, partial, error, offline, stale, denied, processing, success, warning, and critical. Do not leave a skeleton in place of an error.
+- Field Companion is a separate surface, not a compressed desktop.

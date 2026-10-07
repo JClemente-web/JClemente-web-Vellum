@@ -1,0 +1,15 @@
+---
+description: SEO rules that apply only to the public site
+globs: apps/site/**,docs/seo/**
+alwaysApply: false
+---
+
+# Public-site SEO
+
+- SEO applies to apps/site only. Cockpit, field, and client portal are authenticated, noindex, and absent from the sitemap.
+- robots.txt controls crawl. noindex controls indexing. Do not disallow a URL whose noindex must be read.
+- A sitemap is a hint, not proof of indexing. Include only canonical, indexable, public, useful URLs.
+- Do not promise rankings, invent keyword volume, or invent Search Console data.
+- Structured data must match visible content. Do not invent ratings, reviews, prices, authors, or dates.
+- llms.txt is not a Google ranking strategy.
+- No indexable public page until the legal name and canonical host exist.

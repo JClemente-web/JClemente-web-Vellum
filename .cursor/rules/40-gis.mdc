@@ -1,0 +1,13 @@
+---
+description: CRS, geodesy, and map-engine loading rules
+globs: packages/gis/**,apps/web/**
+alwaysApply: false
+---
+
+# GIS
+
+- Keep source, canonical, project, and display CRS distinct, with transformation pipeline and version.
+- Brazil canonical geographic CRS is SIRGAS 2000: EPSG:4674 (2D) or EPSG:4989 (3D). EPSG:4979 is WGS 84 geographic 3D.
+- Verified projected CRS for metric work include EPSG:31978 through EPSG:31985 (UTM 18S-25S). Do not compute critical distances on a geographic CRS.
+- Ellipsoidal height is not normal height. hgeoHNOR2020 targets REALT-2018. MAPGEO2015 is legacy. Store model, version, and uncertainty.
+- MapLibre GL JS and deck.gl are the primary map stack. CesiumJS and Potree load only as lazy chunks, after the exact package license is recorded.

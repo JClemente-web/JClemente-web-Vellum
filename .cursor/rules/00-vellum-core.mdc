@@ -1,0 +1,13 @@
+﻿---
+description: VELLUM OS product identity, isolation, loop, and gate discipline
+alwaysApply: true
+---
+
+# VELLUM core
+
+- This repository is VELLUM OS only. Never open, copy, or depend on STRIX.
+- Build mode is greenfield. Do not restore historical SHAs or treat old Phase 0 tags as done.
+- Judge features against CAPTURE, PROCESSING, INTELLIGENCE, FINDING, HUMAN REVIEW, DECISION, ACTION, REINSPECTION, VERIFICATION, RESULT.
+- Follow ADRs and docs/product/VELLUM_V3_FINAL_SPEC.md. Do not widen scope without evidence.
+- A gate status requires evidence. Never fabricate PASS.
+- Phase 0 code, scaffolds, installs, and migrations require a separate human authorization.

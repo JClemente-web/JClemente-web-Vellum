@@ -1,0 +1,14 @@
+---
+description: Test evidence, tenant isolation, and coverage honesty
+globs: tests/**
+alwaysApply: false
+---
+
+# Testing
+
+- Write the failing characterization of an invariant before the implementation when the behavior is domain-critical.
+- Do not add assertions that only exist to satisfy coverage.
+- Do not change a correct test to make an incorrect implementation pass.
+- Tenant isolation tests must show Tenant A cannot read Tenant B.
+- Coverage numbers come from the tool. If the tool is absent, report NOT APPLICABLE. Never invent a percentage.
+- Domain, contracts, authz, and CRS helpers target at least 95 percent line, branch, and function coverage once the tool exists.
