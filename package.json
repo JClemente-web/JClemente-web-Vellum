@@ -1,0 +1,22 @@
+{
+  "name": "vellum",
+  "private": true,
+  "engines": {
+    "node": ">=24.21.0 <25"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "lockfiles:check": "node scripts/check-lockfiles.mjs",
+    "lint": "eslint .",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:e2e": "playwright test",
+    "test:integration": "vitest run --config vitest.integration.config.ts",
+    "build": "npm run build --workspaces --if-present",
+    "licenses:check": "node scripts/check-licenses.mjs"
+  }
+}
