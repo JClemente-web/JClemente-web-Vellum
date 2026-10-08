@@ -1,0 +1,11 @@
+node_modules/
+dist/
+coverage/
+playwright-report/
+test-results/
+storybook-static/
+.supabase/
+.env
+.env.*
+!.env.example
+*.tsbuildinfo
